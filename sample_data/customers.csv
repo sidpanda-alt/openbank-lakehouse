@@ -1,0 +1,6 @@
+customer_id,first_name,last_name,email,city,created_at
+C001,John,Doe,john.doe@email.com,New York,2023-01-15
+C002,Jane,Smith,jane.smith@email.com,Chicago,2023-02-10
+C003,Michael,Brown,michael.brown@email.com,San Francisco,2023-03-12
+C004,Emily,Davis,emily.davis@email.com,Austin,2023-04-05
+C005,Daniel,Wilson,daniel.wilson@email.com,Seattle,2023-05-21

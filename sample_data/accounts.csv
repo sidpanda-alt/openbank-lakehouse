@@ -1,0 +1,6 @@
+account_id,customer_id,account_type,balance,created_at
+A1001,C001,Checking,5200.50,2023-01-20
+A1002,C002,Savings,10200.00,2023-02-15
+A1003,C003,Checking,3050.75,2023-03-18
+A1004,C004,Savings,8700.00,2023-04-10
+A1005,C005,Checking,650.25,2023-05-25
