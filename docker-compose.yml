@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+
+  spark:
+    build: ./spark
+    container_name: openbank_spark
+    volumes:
+      - ./spark:/app
+      - ./data:/data
+      - ./sample_data:/sample_data
+    working_dir: /app
+    command: sleep infinity
