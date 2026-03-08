@@ -8,3 +8,9 @@ warehouse/openbank.duckdb
 # Ignore dbt build artifacts
 dbt/openbank_dv/target/
 dbt/openbank_dv/logs/
+
+# dbt logs
+dbt/logs/
+
+# dbt build artifacts
+dbt/openbank_dv/target/
