@@ -152,6 +152,12 @@ Warehouse file:
 
 ------------------------------------------------------------------------
 
+## Run Full Pipeline
+
+    python run_pipeline.py
+
+------------------------------------------------------------------------
+
 ## 2. Enter the Spark container
 
     docker exec -it openbank_spark bash
