@@ -1,0 +1,14 @@
+name: 'openbank_dv'
+version: '1.0.0'
+config-version: 2
+
+profile: 'openbank_dv'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+
+models:
+  openbank_dv:
+    +materialized: table
