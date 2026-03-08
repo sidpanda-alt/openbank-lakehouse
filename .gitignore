@@ -1,0 +1,10 @@
+# Ignore data lake files
+data/*
+!data/.gitkeep
+
+# Ignore DuckDB database
+warehouse/openbank.duckdb
+
+# Ignore dbt build artifacts
+dbt/openbank_dv/target/
+dbt/openbank_dv/logs/
