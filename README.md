@@ -8,7 +8,7 @@ End-to-end lakehouse data engineering project demonstrating a modern analytics a
 
 Bronze → Silver → Data Vault → Gold
 
-![Architecture](docs/images/architecture.png)
+![Architecture](docs/images/Architecture.png)
 
 Detailed architecture documentation:
 
