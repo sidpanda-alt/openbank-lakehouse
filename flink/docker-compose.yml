@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  jobmanager:
+    image: flink:1.17
+    container_name: jobmanager
+    volumes:
+      - ./lib/flink-sql-connector-kafka-1.17.2.jar:/opt/flink/lib/flink-sql-connector-kafka-1.17.2.jar
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    networks:
+      - openbank-net
+
+  taskmanager:
+    image: flink:1.17
+    container_name: taskmanager
+    volumes:
+      - ./lib/flink-sql-connector-kafka-1.17.2.jar:/opt/flink/lib/flink-sql-connector-kafka-1.17.2.jar
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+    networks:
+      - openbank-net
+
+networks:
+  openbank-net:
+    external: true
