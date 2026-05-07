@@ -15,7 +15,7 @@ while True:
         "txn_id": str(random.randint(1000, 9999)),
         "account_id": random.choice(accounts),
         "amount": round(random.uniform(100, 1000), 2),
-        "timestamp": time.time()
+        "ts": time.time()
     }
 
     producer.send('transactions', transaction)
