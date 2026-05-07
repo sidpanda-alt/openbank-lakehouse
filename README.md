@@ -216,40 +216,6 @@ docker exec -it jobmanager ./bin/sql-client.sh
 
 ---
 
-# LinkedIn Update
-
-```text
-Building a real-time streaming data pipeline as part of my OpenBank Lakehouse project.
-
-Implemented:
-• Kafka-based event streaming
-• Apache Flink SQL for real-time processing
-• Event-time processing with watermarking
-• Tumbling window aggregations
-• Kafka upsert sink for streaming aggregates
-• Docker-based local orchestration
-
-Key learnings:
-• Streaming architecture design
-• Event-time vs processing-time concepts
-• Append vs update stream handling
-• Kafka topic configuration
-• Flink resource management
-• Real-time aggregation challenges
-
-Current architecture:
-Python Producer → Kafka → Flink SQL → Aggregation → Kafka Sink
-
-Next steps:
-• Snowflake integration
-• dbt transformations
-• CDC ingestion
-• Production-style lakehouse architecture
-
-GitHub:
-https://github.com/sidpanda-alt/openbank-lakehouse
-```
-
 ---
 
 # Git Commands
@@ -260,11 +226,8 @@ git commit -m "Implemented Kafka-Flink real-time streaming pipeline with event-t
 git push
 ```
 
----
 
-# Author
 
-Sidharth Panda
 
 GitHub:
 [https://github.com/sidpanda-alt/openbank-lakehouse](https://github.com/sidpanda-alt/openbank-lakehouse)
