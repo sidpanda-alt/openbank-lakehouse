@@ -244,21 +244,6 @@ docker exec -it jobmanager ./bin/sql-client.sh
 - Airflow DAG scheduling
 - Monitoring and alerting
 
----
-
-# Screenshots
-
-## Kafka Producer
-
-![Kafka Producer](screenshots/producer-running.png)
-
-## Flink Streaming
-
-![Flink Streaming](screenshots/flink-stream-processing.png)
-
-## Kafka Aggregation Output
-
-![Kafka Aggregation](screenshots/kafka-topic-output.png)
 
 ---
 
