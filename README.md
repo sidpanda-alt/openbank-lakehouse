@@ -6,7 +6,7 @@ Real-time + Batch Data Platform for Financial Transactions
 
 # Architecture Overview
 
-![Architecture](docs/architecture.png)
+![Architecture](diagrams/Archeture_diagram.jpeg)
 
 ---
 
