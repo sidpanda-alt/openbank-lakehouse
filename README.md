@@ -216,18 +216,3 @@ docker exec -it jobmanager ./bin/sql-client.sh
 
 ---
 
----
-
-# Git Commands
-
-```bash
-git add .
-git commit -m "Implemented Kafka-Flink real-time streaming pipeline with event-time aggregation"
-git push
-```
-
-
-
-
-GitHub:
-[https://github.com/sidpanda-alt/openbank-lakehouse](https://github.com/sidpanda-alt/openbank-lakehouse)
