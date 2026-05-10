@@ -6,7 +6,7 @@ Real-time + Batch Data Platform for Financial Transactions
 
 # Architecture Overview
 
-![Architecture](docs/architecture.png)
+![Architecture](diagrams/Architecture_diagram.png)
 
 ---
 
@@ -24,6 +24,7 @@ The project focuses on:
 - Batch + streaming integration
 
 ---
+
 # Screenshots
 
 ## Docker Containers
@@ -62,6 +63,10 @@ Apache Flink SQL
 Window Aggregation
         ↓
 Kafka Topic (transactions_agg)
+        ↓
+Python Kafka Consumer
+        ↓
+Snowflake Bronze Layer
 ```
 
 ---
@@ -124,6 +129,41 @@ BI / Analytics / APIs
 
 ---
 
+# Snowflake Bronze Layer
+
+Kafka events are consumed in real time and inserted into the Snowflake bronze layer using a Python streaming consumer.
+
+## Features
+
+- Real-time Kafka event consumption
+- Snowflake ingestion pipeline
+- Bronze layer raw event storage
+- Continuous streaming inserts
+- Dockerized Kafka infrastructure
+
+## Bronze Table
+
+Table: `BRONZE_TRANSACTIONS`
+
+Columns:
+- txn_id
+- account_id
+- amount
+- ts
+- ingestion_time
+
+## Snowflake Consumer
+
+![Snowflake Consumer](screenshots/snowflake-consumer.png)
+
+---
+
+## Snowflake Bronze Table
+
+![Snowflake Bronze](screenshots/snowflake-bronze-table.png)
+
+---
+
 # Key Engineering Concepts
 
 - Event-time Processing
@@ -147,6 +187,8 @@ BI / Analytics / APIs
 - Upsert Kafka topic setup
 - Streaming aggregation debugging
 - Flink resource allocation issues
+- Snowflake connector integration
+- Real-time streaming ingestion
 
 ---
 
@@ -155,8 +197,8 @@ BI / Analytics / APIs
 ```text
 openbank-lakehouse/
 │
-├── docs/
-│   └── architecture.png
+├── diagrams/
+│   └── Architecture_diagram.png
 │
 ├── kafka/
 │   ├── docker-compose.yml
@@ -170,10 +212,19 @@ openbank-lakehouse/
 │       ├── transactions_agg_sink.sql
 │       └── window_aggregation.sql
 │
+├── snowflake/
+│   ├── consumer.py
+│   ├── requirements.txt
+│   └── sql/
+│       └── bronze_transactions.sql
+│
 ├── screenshots/
-│   ├── producer-running.png
-│   ├── flink-stream-processing.png
-│   └── kafka-topic-output.png
+│   ├── docker-containers.png
+│   ├── kafka-producer.png
+│   ├── flink-jobs.png
+│   ├── window-aggregation.png
+│   ├── snowflake-consumer.png
+│   └── snowflake-bronze-table.png
 │
 ├── requirements.txt
 │
@@ -202,6 +253,7 @@ openbank-lakehouse/
 | transactions_source.sql | Kafka source table |
 | transactions_agg_sink.sql | Kafka upsert sink |
 | window_aggregation.sql | Tumbling window aggregation |
+| bronze_transactions.sql | Snowflake bronze table creation |
 
 ---
 
@@ -231,6 +283,12 @@ python kafka/producer.py
 docker exec -it jobmanager ./bin/sql-client.sh
 ```
 
+## Run Snowflake Consumer
+
+```bash
+python snowflake/consumer.py
+```
+
 ---
 
 # Current Implementation Status
@@ -246,36 +304,17 @@ docker exec -it jobmanager ./bin/sql-client.sh
 - Tumbling window aggregation
 - Kafka upsert sink integration
 - Real-time aggregation pipeline
-
----
-
-# Planned Implementation
-
-## Snowflake Layer
-- Bronze Layer
-- Silver Layer
-- Gold Layer
-
-## Batch Processing
-- Spark reprocessing
-- Large-scale aggregations
-- Data quality validation
-
-## Transformation Layer
-- dbt models
-- Curated business metrics
-
-## Orchestration
-- Airflow DAG scheduling
-- Monitoring and alerting
-
+- Snowflake bronze ingestion pipeline
+- Kafka consumer for Snowflake
+- Real-time Snowflake inserts
+- Bronze transaction table
 
 ---
 
 # Future Scope
 
 - Oracle CDC integration
-- Snowpipe Streaming
+- Snowflake Snowpipe Streaming
 - Schema Registry
 - Kafka Connect
 - Infrastructure as Code
