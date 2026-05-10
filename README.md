@@ -24,6 +24,31 @@ The project focuses on:
 - Batch + streaming integration
 
 ---
+# Screenshots
+
+## Docker Containers
+
+![Docker Containers](screenshots/docker-containers.png)
+
+---
+
+## Kafka Producer
+
+![Kafka Producer](screenshots/kafka-producer.png)
+
+---
+
+## Flink Streaming Jobs
+
+![Flink Jobs](screenshots/flink-jobs.png)
+
+---
+
+## Window Aggregation Output
+
+![Window Aggregation](screenshots/window-aggregation.png)
+
+---
 
 # Current Architecture
 
