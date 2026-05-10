@@ -1,0 +1,7 @@
+CREATE OR REPLACE TABLE BRONZE_TRANSACTIONS (
+    txn_id STRING,
+    account_id STRING,
+    amount FLOAT,
+    ts FLOAT,
+    ingestion_time TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
