@@ -44,6 +44,10 @@ The project focuses on:
 
 ---
 
+## Window Aggregation Output
+
+![Window Aggregation](screenshots/window-aggregation.png)
+
 ---
 
 # Current Architecture
